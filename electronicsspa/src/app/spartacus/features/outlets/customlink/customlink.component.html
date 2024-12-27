@@ -1,0 +1,79 @@
+<ng-template cxOutletRef="Tabs" [cxOutletPos]="after">
+    <div class="container add_wrap">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-tab label="Product Details">
+                <ng-container *ngIf="product$ | async as product">
+                    <p class="product_info" [innerHTML]="product?.description"></p>
+                </ng-container>
+            </mat-tab>
+            <mat-tab label="Product Reviews">
+                <ng-container *ngIf="review$ | async as reviews; else noReviews">
+                    <ng-container *ngIf="reviews && reviews.length > 0; else noReviews">
+                        <div *ngIf="review$ | async as reviews; else noReviews">
+                            <div class="review" *ngFor="let review of reviews.slice(0, displayedReviews)">
+                                <h3>{{ review.headline }}</h3>
+                                <div class="stars">
+                                    <cx-star-rating [rating]="review?.rating ?? 0" [disabled]="true"></cx-star-rating>
+                                </div>
+                                <div class="reviewer-info">
+                                    {{ review.principal?.name }} - {{ review.date | date : 'medium' }}
+                                </div>
+                                <p>{{ review.comment }}</p>
+                            </div>
+                            <!-- Show More Button -->
+                            <div *ngIf="displayedReviews < reviews.length">
+                                <button type="button" class="btn btn-primary" (click)="showMoreReviews()">
+                                    Show More Reviews
+                                </button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+
+                <!-- No Reviews Found Section -->
+                <ng-template #noReviews>
+                    <div class="no-reviews">
+                        <h2>No reviews yet</h2>
+                    </div>
+                </ng-template>
+            </mat-tab>
+            <mat-tab label="Specs">
+                <ng-container *ngIf="product$ | async as product">
+                    <div class="container">
+                        <div class="float-left w-100 box_outer" *ngFor="let class of product?.classifications">
+                            <h2>{{ class.name }}</h2>
+                            <div class="float-left w-100 feature_outer" *ngFor="let feature of class.features">
+                                <p>{{ feature.name }}</p>
+                                <ul>
+                                    <li *ngFor="let featureValue of feature?.featureValues">
+                                        {{ featureValue?.value }}
+                                        <span *ngIf="
+                                    feature.featureUnit &&
+                                    feature.featureUnit.symbol &&
+                                    feature.featureUnit.symbol.length > 0 &&
+                                    feature.featureUnit?.unitType !== '300'
+                                  ">
+                                            {{ feature?.featureUnit?.symbol }}
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </mat-tab>
+            <mat-tab label="Shipping">
+                <ng-container *ngIf="content$ | async as content">
+                    <br>
+                    <div>
+                        <p [innerHTML]="content.content"></p>
+                    </div>
+                </ng-container>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</ng-template>
+
+<!-- <div *ngIf="content$ | async as content">
+    <p [innerHTML]="content.content"></p>
+  </div> -->

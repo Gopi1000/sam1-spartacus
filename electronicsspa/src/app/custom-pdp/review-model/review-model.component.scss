@@ -1,0 +1,128 @@
+// :host {
+//   display: block;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.7);  // Dark overlay background
+//   z-index: 9999;  // High z-index to appear above other elements
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .dialog-container {
+//   background-color: rgba(255, 255, 255, 0.658);
+//   border-radius: 8px;
+//   padding: 20px;
+//   max-width: 80%;
+//   max-height: 90%;
+//   overflow: auto;  // Add scrolling if content is too large
+// }
+
+
+/* Basic Reset */
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body {
+//   font-family: Arial, sans-serif;
+//   line-height: 1.6;
+//   padding: 20px;
+// }
+
+// /* Container for the reviews */
+// .review-container {
+//   max-width: 800px;
+//   margin: 0 auto;
+// }
+
+// /* Overall Rating Section */
+// .overall-rating {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 10px 0;
+//   border-bottom: 1px solid #ddd;
+// }
+
+// .overall-rating h2 {
+//   font-size: 24px;
+// }
+
+.overall-rating .stars {
+  color: #1f7bc0;
+}
+
+.overall-rating button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.review h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.review .stars {
+  color: #1f7bc0;
+}
+
+.review .reviewer-info {
+  font-size: 14px;
+  color: #555;
+}
+
+.review p {
+  margin-top: 10px;
+  color: #333;
+}
+
+
+.show-more {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.show-more button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-modal-width {
+  max-width: 80%;  /* Set the width as per your requirement */
+}
+
+.custom-modal {
+  max-width: 600px;
+  margin: auto;  /* Ensures modal stays centered */
+}
+
+.no-reviews {
+  display: flex;                     /* Use flexbox */
+  justify-content: center;           /* Center horizontally */
+  align-items: flex-start;           /* Align items at the top */
+  height: 100vh;                    /* Full viewport height */
+  text-align: center;                /* Center text inside the div */
+  padding-top: 20px;  
+}

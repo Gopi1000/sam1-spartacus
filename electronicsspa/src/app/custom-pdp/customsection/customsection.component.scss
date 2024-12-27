@@ -1,0 +1,102 @@
+.outer_info{
+  background-color: #f8f8f8;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0 20px;
+  .border-left{
+    border-left: 1px solid #d9d9d9;
+  }
+  .inner_wrapper{
+    padding: 30px 0 30px 10px;
+    h4{
+      font-size: 15px;
+      color: #000;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      li{
+        float: left;
+        width: 100%;
+        margin-bottom: 5px;
+        a{
+          display: inline-block;
+          color: #333;
+          font-size: 13px;
+          &:hover {
+            color: #1428a0;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+.product_outer_wrapper{
+  padding: 30px 0;
+  background-color: #fff;
+  h2{
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+  }
+  .product_info{
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 25px 25px 0 0;
+    img{
+      max-width: 100%;
+    }
+  }
+  .product_info_details{
+    background-color: #f7f7f7;
+    padding: 20px 20px 40px 20px;
+    border-radius:0 0 25px 25px;
+    margin-top: 5px;
+    .product_name{
+      color: #000;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .product_add_info{
+      color: #444;
+      font-size: 16px;
+      font-weight: 400;
+      padding-bottom: 30px;
+    }
+  }
+  .border-radius{
+    border-radius:25px 25px!important;
+  }
+  .product_sub_name{
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 30px;
+  }
+  .buynow_btn{
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 6px 22px;
+    border: 0;
+    &:hover{
+      background-color: #333;
+    }
+  }
+}
+::ng-deep .mat-mdc-tab-body-content {
+  overflow: hidden !important;
+}
+
+::ng-deep .mat-mdc-tab-body-content.ng-trigger-translateTab {
+  overflow: hidden !important;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  filter: invert(1);
+}

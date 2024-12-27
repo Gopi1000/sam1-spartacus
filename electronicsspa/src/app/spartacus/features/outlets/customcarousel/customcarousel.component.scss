@@ -1,0 +1,53 @@
+.carousel-item {
+    position: relative;
+}
+
+.carousel-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    max-width: 50%;
+    text-align: left;
+}
+
+.carousel-text-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.carousel-text-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.carousel-buttons .btn {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+}
+
+.btn-outline-light {
+    color: #000000;
+    border-color: #000000;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #fff;
+}
+
+.btn-light:hover {
+    background-color: #000000;
+    color: #000;
+}

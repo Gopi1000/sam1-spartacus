@@ -1,0 +1,91 @@
+<form #registrationForm="ngForm" (ngSubmit)="submit(registrationForm)">
+  <div>
+    <label for="titleCode">Title (optional)</label>
+    <select id="titleCode" name="titleCode" [(ngModel)]="user.titleCode">
+      <option value="" disabled>Select Title</option>
+      <option value="mr">Mr.</option>
+      <option value="mrs">Mrs.</option>
+      <option value="miss">Miss.</option>
+      <option value="ms">Ms.</option>
+      <option value="dr">Dr.</option>
+      <option value="rev">Rev.</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text" [(ngModel)]="user.firstName" placeholder="First name" required />
+    <div *ngIf="registrationForm.submitted" class="error">
+      First Name is required
+    </div>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name</label>
+    <input id="lastName" name="lastName" type="text" [(ngModel)]="user.lastName" placeholder="Last name" required />
+    <div *ngIf="registrationForm.submitted" class="error">
+      Last Name is required
+    </div>
+  </div>
+
+  <div>
+    <label for="uid">Email</label>
+    <input id="uid" name="uid" type="uid" [(ngModel)]="user.uid" placeholder="Email address" required email />
+    <div *ngIf="registrationForm.submitted" class="error">
+      Valid Email is required
+    </div>
+  </div>
+
+  <div>
+    <label for="uid">Secondary Email (optional)</label>
+    <input id="secondarymail" name="secondarymail" type="secondarymail" [(ngModel)]="user.secondarymail"
+      placeholder="Email address" email />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <div style="position: relative; display: inline-block; width: 100%;">
+      <input id="password" name="password" type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="user.password"
+        placeholder="Password" required minlength="6" style="width: 100%; padding-right: 2rem;" />
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+        (click)="togglePasswordVisibility('password')">
+        <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+      </span>
+    </div>
+    <div *ngIf="registrationForm.submitted && user.password.length < 6" class="error">
+      Password is required (min 6 characters)
+    </div>
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirm Password</label>
+    <div style="position: relative; display: inline-block; width: 100%;">
+      <input id="confirmPassword" name="confirmPassword" type="{{ showConfirmPassword ? 'text' : 'password' }}"
+        [(ngModel)]="user.confirmPassword" placeholder="Confirm Password" required minlength="6"
+        style="width: 100%; padding-right: 2rem;" />
+      <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+        (click)="togglePasswordVisibility('confirmPassword')">
+        <i [class]="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+      </span>
+    </div>
+    <div *ngIf="registrationForm.submitted && user.password !== user.confirmPassword" class="error">
+      Passwords must match
+    </div>
+  </div>
+
+  <!-- <div>
+    <input type="checkbox" id="marketingConsent" name="marketingConsent">
+    <label for="marketingConsent">
+      This is a sample marketing consent description that will need to be updated or replaced, based on the valid registration consent required.
+    </label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="termsAndConditions" name="termsAndConditions" required>
+    <label for="termsAndConditions">
+      I am confirming that I have read and agreed with the
+      <a href="electronics-spa/en/USD/terms-and-conditions" target="_blank">Terms & Conditions</a>.
+    </label>
+  </div> -->
+
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form>

@@ -1,0 +1,81 @@
+.customstyle{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+.product_info{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 15px 0 30px 0;
+}
+.review{
+    float: left;
+    width: 100%;
+    margin: 30px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    h3{
+        font-size: 16px;
+        color: #000;
+        font-weight: 500;
+    }
+    p{
+        margin-bottom: 0;
+    }
+}
+.add_wrap{
+    .btn-primary{
+        background-color: transparent;
+        padding: 12px;
+        color: #000;
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid #000;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
+}
+.no-reviews{
+    h2{
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
+        margin: 15px 0;
+    }
+}
+.box_outer{
+    box-shadow: 4px 5px 4px 5px #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    h2{
+        float: left;
+        width: 100%;
+        font-size: 18px;
+        color: #000;
+        font-weight: 500;
+    }
+    p{
+        float: left;
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+    .feature_outer{
+        margin-bottom: 15px;
+        padding:10px 15px 10px 15px;
+        border-bottom: 1px dotted #ddd;
+    }
+    ul{
+        float: left;
+        width: 100%;
+        margin: 0;
+        li{
+            float: left;
+            width: 50%;
+            list-style-type: disclosure-closed;
+            font-size: 14px;
+        }
+    }
+}

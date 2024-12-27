@@ -1,0 +1,404 @@
+<!-- <h1>Static Page</h1>
+<p>
+  pages can be created in spartacus in a generic way. spartacus let you work
+  with the router in a generic way.
+</p>
+<h3>Standard router</h3>
+<p>
+  the standard angular router works as expected. you cn use the router to link
+  to any pages, for example the
+  <a routerLink="/">home page</a>.
+</p>
+<p><a routerLink="demo/static/page">Static page Link to CMS data</a></p>
+
+<h3>Semantic Links</h3>
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="footer-column">
+      <h4>SAP COMMERCE CLOUD</h4>
+      <ul>
+        <li><a routerLink="https://www.sap.com/products/crm.html" target="_blank">About Sap Commerce Cloud</a></li>
+        <li><a routerLink="faq" (click)="scrollToTop()">Frequently Asked Questions</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>SAP CUSTOMER EXPERIENCE</h4>
+      <ul>
+        <li><a routerLink="https://www.sap.com/products/crm.html" target="_blank">Visit SAP</a></li>
+        <li><a routerLink="contact" (click)="scrollToTop()">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>FOLLOW US</h4>
+      <ul>
+        <li><a routerLink="http://www.agile-commerce.com/" target="_blank">Agile Commerce Blog</a></li>
+        <li><a
+            routerLink="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fgroups%2F5063400"
+            target="_blank">Linked In</a></li>
+        <li><a routerLink="https://www.facebook.com/sapcx/" target="_blank">Facebook</a></li>
+        <li><a routerLink="https://x.com/i/flow/login?redirect_after_login=%2FSAP_CX" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="popular-search" *ngIf="componentsData.length > 0">
+    <a [routerLink]="componentsData[0]?.url" (click)="scrollToTop()">
+      <h3>{{ componentsData[0]?.linkName }}</h3>
+    </a>
+    <h4>CAMERAS:</h4>
+    <div class="search-links">
+      <a [routerLink]="componentsData[6]?.url" (click)="scrollToTop()">{{ componentsData[6]?.linkName }}</a> |
+      <a [routerLink]="componentsData[20]?.url" (click)="scrollToTop()">{{ componentsData[20]?.linkName }}</a> |
+      <a [routerLink]="componentsData[23]?.url" (click)="scrollToTop()">{{ componentsData[23]?.linkName }}</a> |
+      <a [routerLink]="componentsData[19]?.url" (click)="scrollToTop()">{{ componentsData[19]?.linkName }}</a> |
+      <a [routerLink]="componentsData[17]?.url" (click)="scrollToTop()">{{ componentsData[17]?.linkName }}</a> |
+      <a [routerLink]="componentsData[13]?.url" (click)="scrollToTop()">{{ componentsData[13]?.linkName }}</a>
+    </div>
+    <br>
+    <h4>ACCESSORIES:</h4>
+    <div class="search-links">
+      <a [routerLink]="componentsData[16]?.url" (click)="scrollToTop()">{{ componentsData[16]?.linkName }}</a> |
+      <a [routerLink]="componentsData[15]?.url" (click)="scrollToTop()">{{ componentsData[15]?.linkName }}</a> |
+      <a [routerLink]="componentsData[22]?.url" (click)="scrollToTop()">{{ componentsData[22]?.linkName }}</a> |
+      <a [routerLink]="componentsData[21]?.url" (click)="scrollToTop()">{{ componentsData[21]?.linkName }}</a>
+    </div>
+  </div>
+
+
+  <div class="popular-search">
+    <a [routerLink]="componentsData[8]?.url" (click)="scrollToTop()">
+      <h3>{{ componentsData[8]?.linkName }}</h3>
+    </a>
+    <div class="search-links">
+      <a [routerLink]="componentsData[9]?.url" (click)="scrollToTop()">{{ componentsData[9]?.linkName }}</a>|
+      <a [routerLink]="componentsData[10]?.url" (click)="scrollToTop()">{{ componentsData[10]?.linkName }}</a>|
+      <a [routerLink]="componentsData[11]?.url" (click)="scrollToTop()">{{ componentsData[11]?.linkName }}</a>|
+      <a [routerLink]="componentsData[14]?.url" (click)="scrollToTop()">{{ componentsData[14]?.linkName }}</a>|
+      <a [routerLink]="componentsData[25]?.url" (click)="scrollToTop()">{{ componentsData[25]?.linkName }}</a>
+    </div>
+  </div>
+
+  <div class="popular-search">
+    <a [routerLink]="componentsData[3]?.url" (click)="scrollToTop()">
+      <h3>{{ componentsData[3]?.linkName }}</h3>
+    </a>
+    <h4>Gears:</h4>
+    <div class="search-links">
+      <a [routerLink]="componentsData[5]?.url" (click)="scrollToTop()">{{ componentsData[5]?.linkName }}</a>|
+      <a [routerLink]="componentsData[24]?.url" (click)="scrollToTop()">{{ componentsData[24]?.linkName }}</a>|
+      <a [routerLink]="componentsData[4]?.url" (click)="scrollToTop()">{{ componentsData[4]?.linkName }}</a>|
+      <a [routerLink]="componentsData[12]?.url" (click)="scrollToTop()">{{ componentsData[12]?.linkName }}</a>|
+      <a [routerLink]="componentsData[18]?.url" (click)="scrollToTop()">{{ componentsData[18]?.linkName }}</a>
+    </div>
+    <br>
+    <h4>Supplies:</h4>
+    <div class="search-links">
+      <a [routerLink]="componentsData[7]?.url" (click)="scrollToTop()">{{ componentsData[7]?.linkName }}</a>|
+      <a [routerLink]="componentsData[1]?.url" (click)="scrollToTop()">{{ componentsData[1]?.linkName }}</a>|
+      <a [routerLink]="componentsData[2]?.url" (click)="scrollToTop()">{{ componentsData[2]?.linkName }}</a>
+    </div>
+  </div>
+  <div>
+  </div>
+</footer>-->
+<section class="outer_info float-left w-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="inner_wrapper float-left w-100">
+          <h4 class="float-left w-100">Product & Service</h4>
+          <ul>
+            <li><a>Smartphones</a></li>
+            <li><a>Tablets</a></li>
+            <li><a>Audio Sound</a></li>
+            <li><a>Watches</a></li>
+            <li><a>Smart Switch</a></li>
+            <li><a>Mobile Accessories</a></li>
+            <li><a>TVs</a></li>
+            <li><a>Sound Devices</a></li>
+            <li><a>Refrigerators</a></li>
+            <li><a>Laundry</a></li>
+            <li><a>Air Solutions</a></li>
+            <li><a>Cooking Appliances</a></li>
+            <li><a>Monitors</a></li>
+            <li><a>Memory Storage</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 border-left">
+        <div class="inner_wrapper float-left w-100">
+          <h4 class="float-left w-100">Shop</h4>
+          <ul>
+            <li><a>FAQs</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Welcome Voucher</a></li>
+            <li><a>Samsung Referral Advantage</a></li>
+            <li><a>Samsung Student Advantage</a></li>
+            <li><a>Defence Purchase Program</a></li>
+            <li><a>Corporate Employee Program </a></li>
+            <li><a>Corporate Bulk Purchase</a></li>
+            <li><a>Samsung Experience Store</a></li>
+            <li><a>Store Locator</a></li>
+            <li><a>Smart Club</a></li>
+            <li><a> Terms of Use</a></li>
+            <li><a>Order Grievance Redressal</a></li>
+            <li><a>Explore</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-2 col-md-2 col-lg-2 border-left">
+        <div class="inner_wrapper float-left w-100">
+          <h4 class="float-left w-100">Support</h4>
+          <ul>
+            <li><a>WhatsApp Us</a></li>
+            <li><a>Sign Language </a></li>
+            <li><a>Email Us</a></li>
+            <li><a>Call Us</a></li>
+            <li><a>Email the CEO</a></li>
+            <li><a>Community</a></li>
+            <li><a>Product Registration</a></li>
+            <li><a>Track Repair</a></li>
+            <li><a>Service Centre </a></li>
+            <li><a>Share Your Opinion</a></li>
+            <li><a>Chat with us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-2 col-md-2 col-lg-2 border-left">
+        <div class="inner_wrapper float-left w-100">
+          <h4 class="float-left w-100">Account & Community</h4>
+          <ul>
+            <li><a>My Page</a></li>
+            <li><a>My Products</a></li>
+            <li><a>Orders</a></li>
+            <li><a>Wishlist</a></li>
+            <li><a>Vouchers</a></li>
+            <li><a>My Referrals</a></li>
+            <li><a>Service</a></li>
+            <li><a>Community</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-3 col-md-3 col-lg-3 border-left">
+        <div class="inner_wrapper float-left w-100">
+          <h4 class="float-left w-100">Sustainability</h4>
+          <ul>
+            <li><a>Smartphones</a></li>
+            <li><a>Tablets</a></li>
+            <li><a>Audio Sound</a></li>
+            <li><a>Watches</a></li>
+            <li><a>Smart Switch</a></li>
+            <li><a>Mobile Accessories</a></li>
+            <li><a>TVs</a></li>
+          </ul>
+          <div class="mt-4 float-left w-100">
+            <h4 class="float-left w-100">About Us</h4>
+            <ul>
+              <li><a>Smartphones</a></li>
+              <li><a>Tablets</a></li>
+              <li><a>Audio Sound</a></li>
+              <li><a>Watches</a></li>
+              <li><a>Smart Switch</a></li>
+              <li><a>Mobile Accessories</a></li>
+              <li><a>TVs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--<section class="outer_info float-left w-100 border-top-0 border-bottom pt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 footer_info">
+        <p class="float-left w-100">Copyright &copy; 2024 <a href="https://laderatechnology.com/">Ladera Technologies Pvt Ltd</a> All Rights reserved.</p>
+        <p class="float-left w-100">Ladera Technology emerges as a leader in the <br> realm of IT excellence, towering above the competition</p>
+        <p class="float-left w-100">Registered Office Address: DLF IT Park Rd, Manapakkam, Chennai, Tamil Nadu 600125 <br>
+          Corporate Identification Number (CIN): U31900DL1995PTC071387</p>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+<!--<section class="product_outer_wrapper float-left w-100">
+  <div class="container-fluid">
+    <h2 class="mb-3">This Week's Highlights</h2>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+      <mat-tab label="New In">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+            <div class="product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+            </div>
+            <div class="product_info_details float-left w-100 text-center">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Mobile">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+            <div class="product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+            </div>
+            <div class="product_info_details float-left w-100 text-center">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="TV">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+            <div class="product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+            </div>
+            <div class="product_info_details float-left w-100 text-center">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="product_info float-left w-100 border-radius mb-4">
+                  <img src="..\assets\img\samsung.png">
+                  <div class="product_sub_name float-left w-100 text-center">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>-->
+
+
+<!--<section class="product_single_outer_wrapper float-left w-100">
+  <div class="container-fluid">
+    <h2 class="mb-3">Mobile</h2>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+      <mat-tab label="Galaxy Z Fold6">
+        <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 col-lg-4 offset-md-4 text-center">
+            <div class="single_product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Mobile">
+        <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 col-lg-4 offset-md-4 text-center">
+            <div class="single_product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="TV">
+        <div class="row">
+          <div class="col-12 col-sm-4 col-md-4 col-lg-4 offset-md-4 text-center">
+            <div class="single_product_info float-left w-100">
+              <img src="..\assets\img\samsung.png" height="510">
+              <div class="product_name float-left w-100">Galaxy A35 | A55 5G <br> Starting ₹ 25999*</div>
+              <div class="product_add_info float-left w-100 mt-2">Avail up to ₹ 6000* bank account</div>
+              <button class="buynow_btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>-->

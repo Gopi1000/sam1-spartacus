@@ -1,0 +1,46 @@
+<ng-template cxOutletRef="Section5" [cxOutletPos]="keyword">
+   <section class="product_outer_wrapper float-left w-100">
+        <div class="container-fluid">
+          <h2 class="mb-3">Product Details</h2>
+          <div id="carouselExampleIndicator" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicator" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicator" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicator" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item" [ngClass]="{ active: i === 0 }" *ngFor="let product of products; let i = index">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-6 text-center">
+                    <!-- Add Product Image -->
+                    <!-- <cx-media class="cx-product-image" [container]="product.images?.PRIMARY" format="product"
+                      [alt]="product.summary">
+                    </cx-media> -->
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-6 mt-5">
+                    <h6>{{ product.name }}</h6>
+                    <p>{{ product.manufacturer }}</p>
+                    <p>{{ product.price?.formattedValue }}</p>
+                    <p>{{ product.summary }}</p>
+                    <p>SKU: {{ product.code }}</p>
+                    <button class="buynow_btn" (click)="navigateToProductDetails(product.code)" (click)="scrollToTop()">View
+                      Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicator" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicator" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
+</ng-template>
+
+
+
